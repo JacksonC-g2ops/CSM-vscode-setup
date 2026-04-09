@@ -178,15 +178,18 @@ Before proceeding to build your project, verify that the OS recognizes the new v
 2.  **Check Java Version:**
     * Run: `java -version`
     * **Expected Output:** ```text
-      openjdk version "11.0.22" ...
-      OpenJDK Runtime Environment Microsoft ...
+      openjdk version "11.0.22" 2024-01-16 LTS
+      OpenJDK Runtime Environment Microsoft-8902769 (build 11.0.22+7-LTS)
+      OpenJDK 64-Bit Server VM Microsoft-8902769 (build 11.0.22+7-LTS, mixed mode)
       ```
 3.  **Check Maven Version:**
     * Run: `mvn -v`
     * **Expected Output:** ```text
-      Apache Maven 3.9.14 ...
-      Maven home: C:\...\apache-maven-3.9.14
-      Java version: 11.0.22, vendor: Microsoft ...
+      Apache Maven 3.9.14 (996c630dbc656c76214ce58821dcc58be960875b)
+      Maven home: C:\Users\YourName\apache-maven-3.9.14
+      Java version: 11.0.22, vendor: Microsoft, runtime: C:\Program Files\Microsoft\jdk-11.0.22.7-hotspot
+      Default locale: en_US, platform encoding: Cp1252
+      OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
       ```
 4.  **Verify JAVA_HOME Path:**
     * Run: `$env:JAVA_HOME`
