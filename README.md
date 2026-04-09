@@ -48,7 +48,7 @@ C:\Users\<USER_PROFILE>\<ModelBuilderPath>
 Examples:
 
 ```text
-C:\Users\JacksonContreras\eclipseWorkspaces\modelBuilderWorkSpace\ModelBuilder
+C:\<USER_PROFILE>\eclipseWorkspaces\modelBuilderWorkSpace\ModelBuilder
 ```
 
 ```text
