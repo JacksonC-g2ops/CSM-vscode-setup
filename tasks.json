@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-plugin",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "cd /d \"${workspaceFolder}\" && mvn clean package -DskipTests"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "deploy-plugin",
+      "type": "shell",
+      "dependsOn": "build-plugin",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\.vscode\\deploy-plugin.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run-csm",
+      "type": "shell",
+      "dependsOn": "deploy-plugin",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "\"C:\\Users\\${env:USERNAME}\\Cameo_Systems_Modeler_2022x\\bin\\csm.exe\""
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
