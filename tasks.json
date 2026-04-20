@@ -4,11 +4,15 @@
     {
       "label": "build-plugin",
       "type": "shell",
-      "command": "cmd",
+      "command": "mvn",
       "args": [
-        "/c",
-        "cd /d \"${workspaceFolder}\" && mvn clean package -DskipTests"
+        "clean",
+        "package",
+        "-DskipTests"
       ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "group": "build",
       "problemMatcher": []
     },
@@ -22,10 +26,17 @@
         "-ExecutionPolicy",
         "Bypass",
         "-File",
-        "${workspaceFolder}\\.vscode\\deploy-plugin.ps1"
+        "${workspaceFolder}\\.vscode\\deploy-plugin.ps1",
+        "-WorkspaceRoot",
+        "${workspaceFolder}",
+        "-PluginName",
+        "${workspaceFolderBasename}"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "CSM_ROOT": "C:\\Users\\${env:USERNAME}\\Cameo_Systems_Modeler_2022x"
+        }
       },
       "problemMatcher": []
     },
@@ -36,8 +47,13 @@
       "command": "cmd",
       "args": [
         "/c",
-        "\"C:\\Users\\${env:USERNAME}\\Cameo_Systems_Modeler_2022x\\bin\\csm.exe\""
+        "\"%CSM_ROOT%\\bin\\csm.exe\""
       ],
+      "options": {
+        "env": {
+          "CSM_ROOT": "C:\\Users\\${env:USERNAME}\\Cameo_Systems_Modeler_2022x"
+        }
+      },
       "problemMatcher": []
     }
   ]
